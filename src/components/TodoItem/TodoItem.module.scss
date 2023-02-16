@@ -1,0 +1,55 @@
+@import "../../var.scss";
+.wrapper,
+.descriptionWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: $color2;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.wrapper {
+  cursor: pointer;
+}
+
+.title {
+  cursor: default;
+}
+
+.desc {
+  word-break: break-all;
+}
+
+.openDesc {
+  .wrapper {
+    border-radius: 5px 5px 0px 0px;
+  }
+}
+
+.descriptionWrapper {
+  margin: 0;
+  padding: 10px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+}
+
+.editInner {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+}

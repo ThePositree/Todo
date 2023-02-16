@@ -1,0 +1,14 @@
+@import "../../var.scss";
+.button {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  min-width: 30px;
+  transition: transform 0.2s;
+  margin: 5px;
+  &:active {
+    transform: scale(0.9);
+  }
+}

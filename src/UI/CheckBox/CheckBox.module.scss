@@ -1,0 +1,28 @@
+@import "../../var.scss";
+.input {
+  display: none;
+  &:checked + .checkbox {
+    background-color: green;
+    &::after {
+      content: "";
+      background-image: url("../../assets/check.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.checkbox {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
