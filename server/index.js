@@ -1,16 +1,30 @@
 import express from "express";
 import router from "./router.js";
 import cors from "cors";
-import connection, { createTabelSQL } from "./bd/bd.js";
+import connection, {
+  createDateBaseSQL,
+  createTableSQL,
+  useDateBaseSQL,
+} from "./bd/bd.js";
 
 const PORT = 5000;
 
 const app = express();
 
 const start = async () => {
-  connection.query(createTabelSQL, (error) => {
+  connection.query(createDateBaseSQL, (error) => {
     if (error) {
-      console.error(error.sqlMessage);
+      if (error.code === "ER_DB_CREATE_EXISTS") {
+        connection.query(useDateBaseSQL);
+        return;
+      }
+      console.error(error);
+    }
+  });
+  connection.query(createTableSQL, (error) => {
+    if (error) {
+      if (error.code === "ER_TABLE_EXISTS_ERROR") return;
+      console.error(error);
     }
   });
 };

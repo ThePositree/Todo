@@ -11,6 +11,7 @@
   - MySql
   - Express
   - SCSS
+  - MySQL Server (Нужно скачать,запустить и настроить подключение в файле src/server/bd/bd.js (host,port,user,password)
 ***
 ## Скрипты:
 1. Для скачивания зависимостей:
